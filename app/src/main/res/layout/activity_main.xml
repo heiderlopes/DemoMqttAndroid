@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <TextView
+        android:id="@+id/cabecalho"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Android IoT"
+        android:textAllCaps="true"
+        android:textSize="22sp" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rodape"
+        android:layout_below="@+id/cabecalho"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <ViewSwitcher
+                android:id="@+id/switcher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:inAnimation="@anim/fade_in"
+                android:onClick="alterarStatus"
+                android:outAnimation="@anim/fade_out">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/desligada" />
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ligada" />
+            </ViewSwitcher>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/rodape"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:text="Desenvolvido por Heider Lopes"
+        android:textSize="14sp" />
+
+</RelativeLayout>
